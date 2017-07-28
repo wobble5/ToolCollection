@@ -13,6 +13,8 @@
 		FE2ABDC71F29C329006CDD1F /* Tool_Collector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE2ABDC51F29C329006CDD1F /* Tool_Collector.xcdatamodeld */; };
 		FE2ABDC91F29C329006CDD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2ABDC81F29C329006CDD1F /* Assets.xcassets */; };
 		FE2ABDCC1F29C329006CDD1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2ABDCA1F29C329006CDD1F /* LaunchScreen.storyboard */; };
+		FE2ABDD41F29DE60006CDD1F /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE2ABDD31F29DE60006CDD1F /* default.jpg */; };
+		FE2ABDD61F29E046006CDD1F /* AddToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ABDD51F29E046006CDD1F /* AddToolViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FE2ABDC81F29C329006CDD1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2ABDCB1F29C329006CDD1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2ABDCD1F29C329006CDD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2ABDD31F29DE60006CDD1F /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		FE2ABDD51F29E046006CDD1F /* AddToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToolViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 		FE2ABDBD1F29C329006CDD1F /* Tool Collector */ = {
 			isa = PBXGroup;
 			children = (
+				FE2ABDD31F29DE60006CDD1F /* default.jpg */,
 				FE2ABDBE1F29C329006CDD1F /* AppDelegate.swift */,
-				FE2ABDC01F29C329006CDD1F /* ViewController.swift */,
 				FE2ABDC21F29C329006CDD1F /* Main.storyboard */,
+				FE2ABDC01F29C329006CDD1F /* ViewController.swift */,
+				FE2ABDD51F29E046006CDD1F /* AddToolViewController.swift */,
 				FE2ABDC81F29C329006CDD1F /* Assets.xcassets */,
 				FE2ABDCA1F29C329006CDD1F /* LaunchScreen.storyboard */,
 				FE2ABDCD1F29C329006CDD1F /* Info.plist */,
@@ -130,6 +136,7 @@
 				FE2ABDCC1F29C329006CDD1F /* LaunchScreen.storyboard in Resources */,
 				FE2ABDC91F29C329006CDD1F /* Assets.xcassets in Resources */,
 				FE2ABDC41F29C329006CDD1F /* Main.storyboard in Resources */,
+				FE2ABDD41F29DE60006CDD1F /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2ABDD61F29E046006CDD1F /* AddToolViewController.swift in Sources */,
 				FE2ABDC71F29C329006CDD1F /* Tool_Collector.xcdatamodeld in Sources */,
 				FE2ABDC11F29C329006CDD1F /* ViewController.swift in Sources */,
 				FE2ABDBF1F29C329006CDD1F /* AppDelegate.swift in Sources */,
