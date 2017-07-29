@@ -45,5 +45,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tool = tools[indexPath.row]
+        performSegue(withIdentifier: "toolSegue", sender: tool)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! AddToolViewController
+        nextVC.tool = sender as? Tool
+    }
 }
 

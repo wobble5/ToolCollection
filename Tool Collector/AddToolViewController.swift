@@ -17,14 +17,26 @@ class AddToolViewController: UIViewController, UIImagePickerControllerDelegate, 
    
     //description of item text field entry
     @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var add: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
 //Class properties
     var imagePicker = UIImagePickerController()
+    var tool : Tool? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        if tool != nil {
+            itemImage.image = UIImage(data: tool!.itemPhoto! as Data)
+            itemTextField.text = tool?.itemDescription
+            add.setTitle("Update", for: .normal)
+            
+        } else {
+            deleteButton.isHidden = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +45,8 @@ class AddToolViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //camera button tapped
     @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
     //photos button tapped
@@ -50,12 +64,26 @@ class AddToolViewController: UIViewController, UIImagePickerControllerDelegate, 
     //Add button tapped
     @IBAction func addTapped(_ sender: Any) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        if tool != nil {
+            tool!.itemDescription = itemTextField.text
+            tool!.itemPhoto = UIImagePNGRepresentation(itemImage.image!)!as NSData
+            
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let addTool = Tool(context: context)
+            
+            addTool.itemDescription = itemTextField.text
+            addTool.itemPhoto = UIImagePNGRepresentation(itemImage.image!)!as NSData
+        }
         
-        let tool = Tool(context: context)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        tool.itemDescription = itemTextField.text
-        tool.itemPhoto = UIImagePNGRepresentation(itemImage.image!)!as NSData
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+         (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext.delete(tool!)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
